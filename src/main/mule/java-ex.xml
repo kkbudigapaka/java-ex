@@ -11,6 +11,7 @@ http://www.mulesoft.org/schema/mule/java http://www.mulesoft.org/schema/mule/jav
 	</http:listener-config>
 	<flow name="java-exFlow" doc:id="09a2d9b0-e534-491c-a461-f17cd0338e98" >
 		<http:listener doc:name="Listener" doc:id="cf4036b4-5b96-4485-a4ad-0a948d44029e" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="0dd16392-c052-4891-81d5-cb0aff7a5d46" message="payload...."/>
 		<java:invoke-static doc:name="Invoke static" doc:id="2c9b3ab8-c8e9-419a-8d26-598c5a02e433" target="javaResult" class="com.brolley.utils.RandomUtils" method="getRandom()"/>
 		<ee:transform doc:name="Transform Message" doc:id="b62e6e1d-9bc9-47ca-a9cf-8687968b4d7e" >
 			<ee:message >
